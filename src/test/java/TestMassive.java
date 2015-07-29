@@ -18,12 +18,12 @@ public class TestMassive {
     }
 
     @Test
-    public void delElement(int i) {
+    public void delElement() {
         int[] myMassive = {1, 5, 4, 23, 65, 32, 78};
-        delElement(0);
+        int newElement = 0;
         int[] expectedArray = {5, 4, 23, 65, 32, 78};
 
-        int[] returnValue = Massive.delElement(myMassive);
+        int[] returnValue = Massive.delElement(myMassive, newElement);
 
 
         assertArrayEquals(expectedArray, returnValue);
@@ -40,6 +40,20 @@ public class TestMassive {
 
       assertArrayEquals(expectedArray, returnValue);
      }
+
+    @Test
+    public void swapElement() {
+        int[] myMassive = {1, 5, 4, 23, 65, 32, 78};
+        int newElement = 0;
+        int newElement1 = 1;
+        int[] expectedArray = {5, 1, 4, 23, 65, 32, 78};
+
+        int[] returnValue = Massive.swapElement(myMassive, newElement, newElement1);
+
+
+        assertArrayEquals(expectedArray, returnValue);
+    }
+
 
 
 }

@@ -14,7 +14,7 @@ public class Massive {
         return newMassive;
     }
 
-    public static int[] delElement(int[] myMassive) {
+    public static int[] delElement(int[] myMassive, int newElement) {
         int[] newMassive = new int[myMassive.length];
         System.arraycopy(myMassive, 0, newMassive, 0, myMassive.length);
 
@@ -26,6 +26,11 @@ public class Massive {
         int[] newMassive = new int[myMassive.length+1];
 
 
+        return newMassive;
+    }
+
+    public static int[] swapElement(int[] myMassive, int newElement, int newElement1) {
+        int[] newMassive = new int[myMassive.length];
         return newMassive;
     }
 }
