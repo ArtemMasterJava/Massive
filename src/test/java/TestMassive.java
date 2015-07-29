@@ -16,4 +16,30 @@ public class TestMassive {
 
         assertArrayEquals(expectedArray, returnValue);
     }
+
+    @Test
+    public void delElement(int i) {
+        int[] myMassive = {1, 5, 4, 23, 65, 32, 78};
+        delElement(0);
+        int[] expectedArray = {5, 4, 23, 65, 32, 78};
+
+        int[] returnValue = Massive.delElement(myMassive);
+
+
+        assertArrayEquals(expectedArray, returnValue);
+    }
+
+  @Test
+      public void addThisElement() {
+      int[] myMassive = {1, 5, 4, 23, 65, 32, 78};
+      myMassive[1] = 112;
+      int[] expectedArray = {1, 112, 5, 4, 23, 65, 32, 78};
+
+      int[] returnValue = Massive.addThisElement(myMassive);
+
+
+      assertArrayEquals(expectedArray, returnValue);
+     }
+
+
 }
