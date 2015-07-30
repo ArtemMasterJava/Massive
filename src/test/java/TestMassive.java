@@ -44,11 +44,11 @@ public class TestMassive {
     @Test
     public void swapElement() {
         int[] myMassive = {1, 5, 4, 23, 65, 32, 78};
-        int newElement = 0;
-        int newElement1 = 1;
+        int firstElementIndex = 0;
+        int secondElementIndex = 1;
         int[] expectedArray = {5, 1, 4, 23, 65, 32, 78};
 
-        int[] returnValue = Massive.swapElement(myMassive, newElement, newElement1);
+        int[] returnValue = Massive.swapElement(myMassive, firstElementIndex, secondElementIndex);
 
 
         assertArrayEquals(expectedArray, returnValue);

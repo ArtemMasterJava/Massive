@@ -29,8 +29,14 @@ public class Massive {
         return newMassive;
     }
 
-    public static int[] swapElement(int[] myMassive, int newElement, int newElement1) {
+    public static int[] swapElement(int[] myMassive, int firstElementIndex, int secondElementIndex) {
         int[] newMassive = new int[myMassive.length];
+        System.arraycopy(myMassive, 0, newMassive, 0, myMassive.length);
+        int temp = newMassive[firstElementIndex];
+        newMassive[firstElementIndex]=newMassive[secondElementIndex];
+        newMassive[secondElementIndex]=temp;
+
+
         return newMassive;
     }
 }
