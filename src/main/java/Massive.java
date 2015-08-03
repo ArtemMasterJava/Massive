@@ -14,12 +14,11 @@ public class Massive {
         return newMassive;
     }
 
-    public static int[] delElement(int[] myMassive, int newElement) {
-        int[] newMassive = new int[myMassive.length];
-        System.arraycopy(myMassive, newElement+1, newMassive, newElement,newMassive.length-1);
-        int[] finalMassive = new int [newMassive.length-1];
-        System.arraycopy(newMassive,0,finalMassive,0,newMassive.length-1);
-        return finalMassive;
+    public static int[] delElement(int[] myMassive, int target) {
+        int[] newMassive = new int[myMassive.length-1];
+        System.arraycopy(myMassive, target+1, newMassive, target,newMassive.length);
+
+        return newMassive;
     }
 
     public static int[] addThisElement(int[] myMassive) {
