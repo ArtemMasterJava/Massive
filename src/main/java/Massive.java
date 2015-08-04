@@ -1,9 +1,8 @@
-
 /**
  * Created by USER on 27.07.2015.
  */
 public class Massive {
-
+    private int size;
 
     public static int[] addElement(int[] myMassive, int newElement) {
         int[] newMassive = new int[myMassive.length + 1];
@@ -15,24 +14,35 @@ public class Massive {
     }
 
     public static int[] delElement(int[] myMassive, int target) {
-        int[] newMassive = new int[myMassive.length ];
-        for (int i = 0; i < myMassive.length; i++) {
-            if (target!=i) {
+        int[] newMassive = new int[myMassive.length - 1];
+        int numMoved = myMassive.length - 1 - target;
+        if (numMoved > 0) {
+            for (int i = target; i < myMassive.length - 1; i++) {
+                newMassive[i] = myMassive[i + 1];
+            }
+            for (int i = 0; i < target; i++) {
                 newMassive[i] = myMassive[i];
             }
         }
-        int[] result = new int[newMassive.length -1];
-        for (int i = 0; i < result.length; i++) {
-            if(newMassive[i]!=0){
-                result[i]= newMassive[i];
+        if (numMoved == 0) {
+            for (int i = 0; i < newMassive.length; i++) {
+                newMassive[i] = myMassive[i];
             }
         }
 
-        return result;
+        return newMassive;
     }
 
-    public static int[] addThisElement(int[] myMassive) {
-        int[] newMassive = new int[myMassive.length+1];
+    public static int[] addThisElement(int[] myMassive, int element, int index) {
+
+        int[] newMassive = new int[myMassive.length + 1];
+        for (int i = index + 1; i < myMassive.length + 1; i++) {
+            newMassive[i] = myMassive[i - 1];
+            newMassive[index] = element;
+        }
+        for (int i = 0; i < index; i++) {
+            newMassive[i] = myMassive[i];
+        }
 
 
         return newMassive;
@@ -42,10 +52,21 @@ public class Massive {
         int[] newMassive = new int[myMassive.length];
         System.arraycopy(myMassive, 0, newMassive, 0, myMassive.length);
         int temp = newMassive[firstElementIndex];
-        newMassive[firstElementIndex]=newMassive[secondElementIndex];
-        newMassive[secondElementIndex]=temp;
+        newMassive[firstElementIndex] = newMassive[secondElementIndex];
+        newMassive[secondElementIndex] = temp;
 
 
         return newMassive;
+    }
+
+
+    private void rangeChek(int index){
+        if(index>=size||index<0){
+            throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
+        }
+    }
+
+    private String outOfBoundsMsg(int index){
+        return "Index "+ index + "Size " + size;
     }
 }

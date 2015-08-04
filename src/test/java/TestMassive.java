@@ -56,10 +56,12 @@ public class TestMassive {
   @Test
       public void addThisElement() {
       int[] myMassive = {1, 5, 4, 23, 65, 32, 78};
-      myMassive[1] = 112;
-      int[] expectedArray = {1, 112, 5, 4, 23, 65, 32, 78};
+      int element = 18;
+      int index = 5;
 
-      int[] returnValue = Massive.addThisElement(myMassive);
+      int[] expectedArray = {1, 5, 4, 23, 65, 18, 32, 78};
+
+      int[] returnValue = Massive.addThisElement(myMassive,element,index);
 
 
       assertArrayEquals(expectedArray, returnValue);
