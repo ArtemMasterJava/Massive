@@ -15,15 +15,20 @@ public class Massive {
     }
 
     public static int[] delElement(int[] myMassive, int target) {
-        int[] newMassive = new int[myMassive.length - 1];
-        for (int i = 0; i < newMassive.length; i++) {
+        int[] newMassive = new int[myMassive.length ];
+        for (int i = 0; i < myMassive.length; i++) {
             if (target!=i) {
                 newMassive[i] = myMassive[i];
-
+            }
+        }
+        int[] result = new int[newMassive.length -1];
+        for (int i = 0; i < result.length; i++) {
+            if(newMassive[i]!=0){
+                result[i]= newMassive[i];
             }
         }
 
-        return newMassive;
+        return result;
     }
 
     public static int[] addThisElement(int[] myMassive) {
