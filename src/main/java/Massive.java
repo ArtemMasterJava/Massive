@@ -15,8 +15,13 @@ public class Massive {
     }
 
     public static int[] delElement(int[] myMassive, int target) {
-        int[] newMassive = new int[myMassive.length-1];
-        System.arraycopy(myMassive, target+1, newMassive, target,newMassive.length);
+        int[] newMassive = new int[myMassive.length - 1];
+        for (int i = 0; i < newMassive.length; i++) {
+            if (target!=i) {
+                newMassive[i] = myMassive[i];
+
+            }
+        }
 
         return newMassive;
     }

@@ -18,12 +18,36 @@ public class TestMassive {
     }
 
     @Test
-    public void delElement() {
+    public void delLastElement() {
         int[] myMassive = {1, 5, 4, 23, 65, 32, 78};
-        int newElement = 0;
-        int[] expectedArray = {5, 4, 23, 65, 32, 78};
+        int target = 6;
+        int[] expectedArray = {1, 5, 4, 23, 65, 32};
 
-        int[] returnValue = Massive.delElement(myMassive, newElement);
+        int[] returnValue = Massive.delElement(myMassive, target);
+
+
+        assertArrayEquals(expectedArray, returnValue);
+    }
+
+    @Test
+    public void delMidElement() {
+        int[] myMassive = {1, 5, 4, 23, 65, 32, 78};
+        int target = 3;
+        int[] expectedArray = {1, 5, 4, 65, 32, 78};
+
+        int[] returnValue = Massive.delElement(myMassive, target);
+
+
+        assertArrayEquals(expectedArray, returnValue);
+    }
+
+    @Test
+    public void delFirstElement() {
+        int[] myMassive = {1, 5, 4, 23, 65, 32, 78};
+        int target = 0;
+        int[] expectedArray = { 5, 4, 23, 65, 32, 78};
+
+        int[] returnValue = Massive.delElement(myMassive, target);
 
 
         assertArrayEquals(expectedArray, returnValue);
