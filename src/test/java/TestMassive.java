@@ -45,7 +45,7 @@ public class TestMassive {
     public void delFirstElement() {
         int[] myMassive = {1, 5, 4, 23, 65, 32, 78};
         int target = 0;
-        int[] expectedArray = { 5, 4, 23, 65, 32, 78};
+        int[] expectedArray = {5, 4, 23, 65, 32, 78};
 
         int[] returnValue = Massive.delElement(myMassive, target);
 
@@ -53,19 +53,19 @@ public class TestMassive {
         assertArrayEquals(expectedArray, returnValue);
     }
 
-  @Test
-      public void addThisElement() {
-      int[] myMassive = {1, 5, 4, 23, 65, 32, 78};
-      int element = 18;
-      int index = 5;
+    @Test
+    public void addThisElement() {
+        int[] myMassive = {1, 5, 4, 23, 65, 32, 78};
+        int element = 18;
+        int index = 5;
 
-      int[] expectedArray = {1, 5, 4, 23, 65, 18, 32, 78};
+        int[] expectedArray = {1, 5, 4, 23, 65, 18, 32, 78};
 
-      int[] returnValue = Massive.addThisElement(myMassive,element,index);
+        int[] returnValue = Massive.addThisElement(myMassive, element, index);
 
 
-      assertArrayEquals(expectedArray, returnValue);
-     }
+        assertArrayEquals(expectedArray, returnValue);
+    }
 
     @Test
     public void swapElement() {
@@ -79,7 +79,6 @@ public class TestMassive {
 
         assertArrayEquals(expectedArray, returnValue);
     }
-
 
 
 }

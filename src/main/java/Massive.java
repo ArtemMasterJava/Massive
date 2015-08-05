@@ -2,7 +2,7 @@
  * Created by USER on 27.07.2015.
  */
 public class Massive {
-    private int size;
+
 
     public static int[] addElement(int[] myMassive, int newElement) {
         int[] newMassive = new int[myMassive.length + 1];
@@ -60,13 +60,4 @@ public class Massive {
     }
 
 
-    private void rangeChek(int index){
-        if(index>=size||index<0){
-            throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
-        }
-    }
-
-    private String outOfBoundsMsg(int index){
-        return "Index "+ index + "Size " + size;
-    }
 }
