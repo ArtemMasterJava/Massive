@@ -15,7 +15,13 @@ public class Massive {
 
     public static int[] delElement(int[] myMassive, int target) {
         int[] newMassive = new int[myMassive.length - 1];
-        int numMoved = myMassive.length - 1 - target;
+        for (int i = 0, j = 0; i < myMassive.length ; i ++) {
+            if (i!=target){
+                j++;
+                newMassive[j-1] = myMassive[i];
+            }
+        }
+      /*  int numMoved = myMassive.length - 1 - target;
         if (numMoved > 0) {
             for (int i = target; i < myMassive.length - 1; i++) {
                 newMassive[i] = myMassive[i + 1];
@@ -29,7 +35,7 @@ public class Massive {
                 newMassive[i] = myMassive[i];
             }
         }
-
+       */
         return newMassive;
     }
 
