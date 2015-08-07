@@ -25,17 +25,16 @@ public class Massive {
     }
 
     public static int[] addThisElement(int[] myMassive, int element, int index) {
-
         int[] newMassive = new int[myMassive.length + 1];
-        for (int i = index + 1; i < myMassive.length + 1; i++) {
-            newMassive[i] = myMassive[i - 1];
-            newMassive[index] = element;
+        for (int i = 0, j = 0; i < myMassive.length; i++) {
+            newMassive[j] = myMassive[i];
+            j++;
+            if (i == index) {
+                j++;
+                newMassive[j - 1] = myMassive[i];
+            }
         }
-        for (int i = 0; i < index; i++) {
-            newMassive[i] = myMassive[i];
-        }
-
-
+        newMassive[index] = element;
         return newMassive;
     }
 
@@ -52,3 +51,4 @@ public class Massive {
 
 
 }
+
